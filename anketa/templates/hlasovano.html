@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="static/style.css">
+    <title>Document</title>
+</head>
+<body>
+    <p>Data se odeslala</p>
+    <h2>Vysledky ankety</h2>
+
+    <div class="img">
+    <img src="/static/img/c++.jpg" width="50px" height="{{ vysledky[0] * 10 }}px">
+    <img src="/static/img/csharp.jpg" width="50px" height="{{ vysledky[1] * 10 }}px">
+    <img src="/static/img/javascript.jpg" width="50px" height="{{ vysledky[2] * 10 }}px">
+    <img src="/static/img/python.jpg" width="50px" height="{{ vysledky[3] * 10 }}px">
+    </div>
+    <div class="center">
+    <div class="row">
+    <span>C++: {{ vysledky[0] }}</span>
+    <span>C#: {{ vysledky[1] }}</span>
+    <span>JS: {{ vysledky[2] }}</span>
+    <span>py: {{ vysledky[3] }}</span>
+    </div>
+    </div>
+    <a href="/"> Hlasovat znovu</a>
+
+</body>
+</html>

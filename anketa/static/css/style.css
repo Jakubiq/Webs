@@ -1,0 +1,39 @@
+body {
+    background-color: pink;
+}
+
+h1 {
+    text-align: center;
+    font-family:  Comic Sans MS;
+}
+
+a {
+    text-align: center;
+    font-family:  Comic Sans MS;
+}
+
+p {
+    text-align: center;
+    font-family:  Comic Sans MS;
+}
+
+.center{
+    text-align: center;
+}
+
+a {
+    padding: 5px;
+}
+
+a:link, a:visited {
+    background-color: #f44336;
+    color: white;
+    padding: 14px 25px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+  }
+  
+  a:hover, a:active {
+    background-color: red;
+  }
