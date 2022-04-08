@@ -1,0 +1,71 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&family=Roboto+Mono:wght@100&display=swap');
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: #AAC0AF;
+    margin: 0;
+}
+
+
+.preklik{
+    text-align: center;
+    padding: 10px;
+}
+
+h1 {
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+    background-color: #839791;
+    margin: 0;
+    padding: 15px;
+
+}
+
+table, th, td{
+    width: 50%;
+    border: 1px solid;
+    border-collapse: collapse;
+    margin-left: auto;
+    margin-right: auto
+}
+
+.middle{
+    text-align: center;
+    line-height: 32px;
+}
+
+a {
+    text-decoration: none;
+    background-color: #839791;
+    border: none;
+    color: #fff;
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 1rem;
+}
+
+a:hover {
+    background-color: #5d6b66;
+    transition: .5s;
+}
+
+.messages {
+    background-color: #839791;
+    border-radius: 1em;
+    width: 40%;
+    margin: 0 auto;
+}
+
+input[type="submit"] {
+    background-color: #839791;
+    border: none;
+    color: #fff;
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 1rem;
+}
+
+input[type="submit"]:hover {
+    background-color: #5d6b66;
+    transition: .5s;
+}
