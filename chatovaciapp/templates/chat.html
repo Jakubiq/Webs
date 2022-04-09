@@ -21,7 +21,9 @@
             <div>{{ form.jmeno.label }} {{ form.jmeno }}</div>
         {% endif %}
             <div>{{ form.zprava.label }} {{ form.zprava }}</div>
-        <p><a href="/odhlasit">odhlásit</a></p>
+        <div class="buttonPossition">
+            <p><a href="/odhlasit">odhlásit</a></p>
+        </div>
         <input type="submit" value="Pošli">
         <div class="messages" hx-get="/news" hx-trigger="every 2s">
         {% for mess in zpravy[::-1] %}

@@ -34,9 +34,15 @@ table, th, td{
     line-height: 32px;
 }
 
+.buttonPossition{
+    position: absolute;
+    top: 0;
+    right: .5rem;
+}
+
 a {
     text-decoration: none;
-    background-color: #839791;
+    background-color: #EF2D56;
     border: none;
     color: #fff;
     padding: 10px 15px;
@@ -45,7 +51,7 @@ a {
 }
 
 a:hover {
-    background-color: #5d6b66;
+    background-color: #aa1f3d;
     transition: .5s;
 }
 
@@ -53,7 +59,9 @@ a:hover {
     background-color: #839791;
     border-radius: 1em;
     width: 40%;
-    margin: 0 auto;
+    height: 20rem;
+    margin: 1rem auto;
+    overflow: auto;
 }
 
 input[type="submit"] {
