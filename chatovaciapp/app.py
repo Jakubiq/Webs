@@ -34,10 +34,20 @@ def chat():
         return redirect('/')
     return render_template('chat.html', form=form, zpravy=zpravy)
 
+@app.route('/zpravy')
+def zpravy():
+    con = sqlite3.connect("chat.db")
+    cur = con.cursor()
+    cur.execute("SELECT jmeno,zprava FROM chat")
+    zpravy = cur.fetchall()
+    con.close()
+    return render_template("zpravy.html", zpravy=zpravy)
+
 @app.route('/odhlasit', methods=['GET', 'POST'])
 def logout():
     session.clear()
     return redirect('/')
+
 
 
 if __name__ == '__main__':
