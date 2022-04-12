@@ -2,6 +2,7 @@ import sqlite3
 from flask import Flask, redirect, render_template, session
 from flask_wtf import FlaskForm
 from wtforms import IntegerField, StringField, TimeField, TextAreaField
+from wtforms.validators import InputRequired
 
 
 app = Flask(__name__)
@@ -9,8 +10,8 @@ app.debug = True
 app.secret_key = "qwertz"
 
 class chatForm(FlaskForm):
-    jmeno = StringField("jméno")
-    zprava = TextAreaField("zpráva")
+    jmeno = StringField("jméno", validators=[InputRequired()])
+    zprava = TextAreaField("zpráva", validators=[InputRequired()])
 
 
 
