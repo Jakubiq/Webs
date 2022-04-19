@@ -25,10 +25,9 @@
             <p><a href="/odhlasit">odhlásit</a></p>
         </div>
         <input type="submit" value="Pošli">
-        <div class="messages" hx-get="/zpravy" hx-trigger="every .2s">
-        {% for mess in zpravy[::-1] %}
-            <p> {{ mess[0] }}: 
-            {{ mess[1] }} </p>
+        <div class="messages" hx-get="/zpravy" hx-trigger="every .5s">
+        {% for mess in zpravy %}
+        <div class="message"> {{ mess[0] }}: {{ mess[1] }} <a href="/odstranit/{{ mess[2]}}">Smazat</a></div>
         {% endfor %}
         </div>
     </div>

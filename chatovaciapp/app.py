@@ -39,7 +39,7 @@ def chat():
 def zpravy():
     con = sqlite3.connect("chat.db")
     cur = con.cursor()
-    cur.execute("SELECT jmeno,zprava FROM chat")
+    cur.execute("SELECT jmeno,zprava,rowid FROM chat ORDER BY vlozeno DESC")
     zpravy = cur.fetchall()
     con.close()
     return render_template("zpravy.html", zpravy=zpravy)
@@ -49,7 +49,14 @@ def logout():
     session.clear()
     return redirect('/')
 
-
+@app.route('/odstranit/<int:id_zpravy>')
+def smazat_zpravu(id_zpravy):
+    con = sqlite3.connect("chat.db")
+    cur = con.cursor()
+    cur.execute("DELETE FROM chat WHERE rowid=?", (id_zpravy,))
+    con.commit()
+    con.close()
+    return redirect('/')
 
 if __name__ == '__main__':
     app.run()

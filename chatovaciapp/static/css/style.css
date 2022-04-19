@@ -42,7 +42,7 @@ table, th, td{
     right: .5rem;
 }
 
-a {
+.middle a {
     text-decoration: none;
     background-color: #EF2D56;
     border: none;
@@ -52,11 +52,11 @@ a {
     cursor: pointer;
     border-radius: 1rem;
 }
-
-a:hover {
+/* 
+.middle a:hover {
     background-color: #aa1f3d;
     transition: .5s;
-}
+} */
 
 .messages {
     background-color: #839791;
@@ -79,4 +79,11 @@ input[type="submit"] {
 input[type="submit"]:hover {
     background-color: #5d6b66;
     transition: .5s;
+}
+
+.messages a{
+    font-size: .5rem;
+    color: #ffff;
+    background-color: #333;
+    padding: .5rem;
 }

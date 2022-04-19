@@ -1,6 +1,5 @@
 <div class="messages">
-    {% for mess in zpravy[::-1] %}
-        <p> {{ mess[0] }}: 
-        {{ mess[1] }} </p>
-    {% endfor %}
+    {% for mess in zpravy %}
+        <div class="message"> {{ mess[0] }}: {{ mess[1] }} <a href="/odstranit/{{ mess[2]}}">Smazat</a></div>
+        {% endfor %}
 </div>
