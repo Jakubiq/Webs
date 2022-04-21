@@ -1,5 +1,5 @@
-<div class="messages">
+<div class="messages2">
     {% for mess in zpravy %}
-        <div class="message"> {{ mess[0] }}: {{ mess[1] }} <a href="/odstranit/{{ mess[2]}}">Smazat</a></div>
-        {% endfor %}
+        <div class="message"> {{ mess[0] }}: {{ mess[1] }} <a href="/odstranit/{{ mess[2] }}"><i class="fa-solid fa-trash-can"></i></a></div>
+    {% endfor %}
 </div>

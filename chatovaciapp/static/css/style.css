@@ -62,9 +62,9 @@ table, th, td{
     background-color: #839791;
     border-radius: 1em;
     width: 40%;
-    /* height: 20rem; */
+    height: 20rem;
     margin: 1rem auto;
-    /* overflow: auto; */
+    overflow: auto;
 }
 
 input[type="submit"] {
@@ -81,9 +81,32 @@ input[type="submit"]:hover {
     transition: .5s;
 }
 
+.messages{
+    display: flex;
+    justify-content: center;
+}
+
+.messcenter{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .messages a{
-    font-size: .5rem;
+    position: relative;
+    font-size: .9rem;
     color: #ffff;
     background-color: #333;
+    padding: .5rem 1rem;
+    margin: 0 1rem;
+}
+
+.messages a:hover{
+    transition: 500ms;
+    background-color: #fff;
+    color: #333;
+}
+
+.message{
     padding: .5rem;
 }
