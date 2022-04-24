@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="static/css/style.css">
+
+    <title>Výsledky</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="header">
+        <!-- <h1>Výsledky Běhu kolem Teplic</h1> -->
+        <h1>{{ title }}</h1>
+    </div>
+    <div class="back"><a href="/">zpátky</a></div>
+    <div class="lastname"><a href="/prijmeniDesc">sezřadit podle příjmení sestupně</a></div>
+    <div calss="center">
+        <table>
+            <tr>
+                <th>startovní číslo</th>
+                <th>jméno</th>
+                <th>příjmení</th>
+                <th>čas</th>
+            </tr>
+        {% for zavodnik in vysledky %}
+        <tr>    
+            <td>{{ zavodnik[0] }}</td>
+            <td>{{ zavodnik[1] }}</td>
+            <td>{{ zavodnik[2] }}</td>
+            <td>{{ zavodnik[3] }}</td>
+        </tr>
+        {% endfor %}
+        </table>
+    </div>
+</body>
+</html>
