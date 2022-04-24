@@ -94,7 +94,8 @@ def remove(id_zavodnika):
     cur.execute("DELETE FROM beh WHERE cislo=?", (id_zavodnika,))
     con.commit()
     con.close()
-    return redirect('/')
+    return render_template('vysledky.html', vysledky=vysledky)
+
 
 if __name__ == '__main__':
     app.run()
