@@ -1,5 +1,10 @@
 <div class="messages2">
     {% for mess in zpravy %}
-        <div class="message"> {{ mess[0] }}: {{ mess[1] }} <a href="/odstranit/{{ mess[2] }}"><i class="fa-solid fa-trash-can"></i></a></div>
+        <div class="message"> {{ mess[0] }}: {{ mess[1] }} 
+            {% if session['prezdivka'] == mess[0] %}
+                <a href="/odstranit/{{ mess[2] }}"><i class="fa-solid fa-trash-can"></i></a></div>
+            {% else %}
+                <div hidden><a href="/odstranit/{{ mess[2] }}"><i class="fa-solid fa-trash-can"></i></a></div>
+            {% endif %}
     {% endfor %}
 </div>
