@@ -1,11 +1,11 @@
 import requests
-from flask import Flask, render_template, redirect
+from flask import Flask, render_template, redirect 
 
 app = Flask(__name__)
 app.debug = True
+app.secret_key = "fortnitebattlepass"
 
-
-@app.route('/')
+@app.route('/', methods=["GET", "POST"])
 def Weather():
     city = "Krupka"
     url = f'https://api.openweathermap.org/data/2.5/weather?q={city}&appid=b77748418d25e708cc4f30931fc06401&units=metric&lang=cz'
