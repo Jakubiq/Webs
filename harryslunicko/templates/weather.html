@@ -29,6 +29,7 @@
         var center = SMap.Coords.fromWGS84({{ lon }}, {{ lat }});
         var m = new SMap(JAK.gel("m"), center, 13);
         m.addDefaultLayer(SMap.DEF_BASE).enable();
+        m.addDefaultControls();
     </script>
     <div class="container">
         <div class="card mt-3 shadow" style="width: 25rem;">
