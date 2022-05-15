@@ -13,7 +13,7 @@ def Weather():
         city = 'Praha'
     url = f'https://api.openweathermap.org/data/2.5/weather?q={city}&appid=b77748418d25e708cc4f30931fc06401&units=metric&lang=cz'
     reply = requests.get(url).json()
-    if int(reply['cod']) == 404:
+    if int(reply['cod']) > 300:
         city = "Praha"
         url = f'https://api.openweathermap.org/data/2.5/weather?q={city}&appid=b77748418d25e708cc4f30931fc06401&units=metric&lang=cz'
         reply = requests.get(url).json()
