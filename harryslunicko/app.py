@@ -15,10 +15,16 @@ def Weather():
     url = f'https://api.openweathermap.org/data/2.5/weather?q={city}&appid=b77748418d25e708cc4f30931fc06401&units=metric&lang=cz'
     reply = requests.get(url).json()
     if int(reply['cod']) > 300:
+<<<<<<< HEAD
         city = "Toto město bohužel neexituje"
         url = f'https://api.openweathermap.org/data/2.5/weather?q=Praha&appid=b77748418d25e708cc4f30931fc06401&units=metric&lang=cz'
         found = False
         reply = requests.get(url).json()
+=======
+        city = "Toto město neexistuje"
+        url = f'https://api.openweathermap.org/data/2.5/weather?q=Praha&appid=b77748418d25e708cc4f30931fc06401&units=metric&lang=cz'
+        reply = requests.get(url).json() 
+>>>>>>> dc3401b3d010f800e5450946b3ac963629169a49
     temp = reply['main']['temp']
     describe = reply['weather'][0]['description']
     icon = reply['weather'][0]['icon']
