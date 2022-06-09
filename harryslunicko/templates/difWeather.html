@@ -11,13 +11,18 @@
     <script type="text/javascript">Loader.load();</script>
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.8.0/dist/leaflet.css"
+    integrity="sha512-hoalWLoI8r4UszCkZ5kL8vayOGVae1oxXe/2A4AO6J9+580uKHDO3JdHb7NzwwzK5xr/Fs0W40kiNHxM9vyTtQ=="
+    crossorigin=""/>
+    <script src="https://unpkg.com/leaflet@1.8.0/dist/leaflet.js"
+    integrity="sha512-BB3hKbKWOc9Ez/TAwyWxNXeoV9c1v6FIeYiBieIWkpLjauysF18NzgR1MBNBXf8/KABdlkX68nAhlwcDFLGPCQ=="
+    crossorigin=""></script>
     <title>Počasí {{ city }}</title>
   </head>
   <body> 
-    <div id="m" ></div>
+    <div id="map" ></div>
     <style> 
-        #m{
+        #map{
             position: absolute;
             top: 0;
             left: 0;
@@ -28,18 +33,15 @@
         }
     </style>
     <script>
-		var center = SMap.Coords.fromWGS84({{ lon }},{{ lat }});
-		var m = new SMap(JAK.gel("m"), center, 13);
-		m.addDefaultLayer(SMap.DEF_BASE).enable();
-		m.addDefaultControls();
+		var map = L.map('map').setView([{{ lat }}, {{ lon }}], 13);
 
-		var layer = new SMap.Layer.Marker();
-		m.addLayer(layer);
-		layer.enable();
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+    }).addTo(map);
 
-		var options = {};
-		var marker = new SMap.Marker(center, "myMarker", options);
-		layer.addMarker(marker);
+    L.marker([{{ lat }}, {{ lon }}]).addTo(map)
+    .bindPopup('tady')
+    .openPopup();
     </script>
     <div class="container">
         <div class="card mt-3 bg-light shadow-lg mb-3 rounded" style="width: 25rem;">
@@ -58,7 +60,7 @@
                         <form method="post">
                         <input type="text" name="city">
                         <button class="btn btn-primary float-end" type="submit">Změnit</button>
-						            <button type="button" class="btn btn-secondary float-start mt-3" ><a style="text-decoration: none; color: #ffff;" href="/dif">Změnit mapu</a></button>
+                        <button type="button" class="btn btn-secondary float-start mt-3" ><a style="text-decoration: none; color: #ffff;" href="/">Změnit mapu</a></button>
 
                     </form>
                 </div>
